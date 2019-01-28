@@ -2,8 +2,10 @@
 
 namespace Cocorico\CoreBundle\Event;
 
+use Cocorico\CoreBundle\Form\Type\HolidayType;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\Constraints\Isbn;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class BookingListingNewFormSubscriber implements EventSubscriberInterface
 {
@@ -21,6 +23,12 @@ class BookingListingNewFormSubscriber implements EventSubscriberInterface
                     'constraints' => new Isbn(),
                 ]
             );
+
+        $builder->add('holidays', CollectionType::class, [
+            'allow_add' => true,
+            'allow_delete' => true,
+            'entry_type' => HolidayType::class
+        ]);
     }
 
 
