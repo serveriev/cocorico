@@ -9,6 +9,12 @@ services:
         tags:
             - { name: kernel.event_subscriber}
 
+    #BookingListingNewForm subscriber
+    cocorico.listing_new_form.subscriber:
+        class: Cocorico\CoreBundle\Event\BookingListingNewFormSubscriber
+        tags:
+        - { name: kernel.event_subscriber}
+
     #Booking Refund subscriber
     cocorico.booking_payin_refund.subscriber:
         class: Cocorico\CoreBundle\Event\BookingPayinRefundSubscriber

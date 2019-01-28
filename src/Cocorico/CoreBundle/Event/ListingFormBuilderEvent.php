@@ -28,7 +28,7 @@ class ListingFormBuilderEvent extends Event
     /**
      * @return FormBuilderInterface
      */
-    public function getFormBuilder()
+    public function getFormBuilder(): FormBuilderInterface
     {
         return $this->formBuilder;
     }
