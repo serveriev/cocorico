@@ -5,6 +5,7 @@ services:
         arguments:
             - "@cocorico.booking.manager"
             - "@event_dispatcher"
+            - "@cocorico.mailer.twig_swift"
         tags:
             - { name: kernel.event_subscriber}
 
